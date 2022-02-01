@@ -7,9 +7,20 @@
                 <div class="bar2"></div>
                 <div class="bar3"></div>
               </button>
+              <button class="login">
+                  <i class="fas fa-key"></i>
+                  <span>Login</span>
+              </button>
+              <button class="sign-up">
+                  <span>Sign Up</span>
+              </button>
           </div>
       </slot>
-      <slot name="middlePane"></slot>
+      <div class="middlePane">
+          <div class="sidebar" :style="computeStyle">
+              <slot name="sideNav"></slot>
+          </div>
+      </div>
   </div>
 </template>
 
@@ -20,9 +31,17 @@ export default {
             toggle: false
         };
     },
+    computed: {
+        computeStyle() {
+            return {
+                width: !this.toggle ? '56px' : '180px'
+            }
+        }
+    },
     methods: {
         toggleHamburger() {
             this.toggle = !this.toggle;
+            this.$emit('toggleSidePane', this.toggle);
         }
     }
 }
@@ -48,6 +67,7 @@ export default {
             background: #3f51b5;
             border: none;
             outline: none;
+            margin-left: 6px;
         }
         .change {
             .bar1 {
@@ -59,6 +79,29 @@ export default {
                 -webkit-transform: rotate(45deg) translate(-8px, -8px);
                 transform: rotate(45deg) translate(-8px, -8px);
             }
+        }
+        .login, .sign-up {
+            width: 90px;
+            height: 30px;
+            position: absolute;
+        }
+        .login {
+            right: 100px;
+            span {
+                margin-left: 10px;
+            }
+        }
+        .sign-up {
+            right: 5px
+        }
+    }
+    .middlePane {
+        background: #ffffff;
+        height: calc(100vh - 56px);
+        .sidebar {
+            height: 100%;
+            background: #316bae;
+            transition: 0.5s all;
         }
     }
 }
