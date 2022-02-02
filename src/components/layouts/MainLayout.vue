@@ -100,8 +100,9 @@ export default {
         height: calc(100vh - 56px);
         .sidebar {
             height: 100%;
-            background: #316bae;
-            transition: 0.5s all;
+            background: #ffffff;
+            transition: width 180ms ease-in-out;
+            border: 1px solid rgba(156,152,152,.5);
         }
     }
 }
