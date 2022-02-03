@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main-layout @toggleSidePane="setSidePaneFlag">
-      <div slot="sideNav" class="sideNav">
+      <div slot="sideNav" class="side-nav">
         <ul>
           <li :class="{'nav-btn-open': this.expanded, 'nav-btn': !this.expanded, 'active': this.activeOption.dashboard}">
             <a @click="selectItem('dashboard')">
@@ -22,6 +22,16 @@
             </a>
           </li>
         </ul>
+      </div>
+      <div slot="mainContent" class="main-content">
+          <div class="img-container">
+            <div class="img-content">
+              <h1>Learn Vuejs, Javascript {{'&'}} More</h1>
+              <h3 class="typed-out">Learn How To Build Websites {{'&'}} Apps</h3>
+              <button class="tour">Take a Tour</button>
+            </div>
+          </div>
+          <div class="section-two"></div>
       </div>
     </main-layout>
   </div>
@@ -64,7 +74,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  .sideNav {
+  .side-nav {
     display: flex;
     flex-direction: column;
     padding: 15px 0;
@@ -106,15 +116,15 @@ body {
         }
       }
       .active {
-            background: #DA312515;
+            background: #2980b915;
             border-radius: 5%;
             width: 100%;
             height: 100%;
             .showText {
-              color: #DA3125 !important;
+              color: #2980b9 !important;
             }
             i {
-              color: #DA3125 !important;
+              color: #2980b9 !important;
             }
             &::before {
               content: "";
@@ -130,6 +140,70 @@ body {
       .nav-btn-open {
         justify-content: flex-start;
       }
+    }
+  }
+  .main-content {
+    .img-container {
+      height: 60vh;
+      background-size: cover;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/elearningBg.jpg');
+      background-position: 65% 50%;
+      background-attachment: fixed;
+      .img-content {
+        color: white;
+        margin: calc(30vh - 120px) 10%;
+        height: auto;
+        position: absolute;
+        text-align: left;
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+        .typed-out {
+          overflow: hidden;
+          white-space: nowrap;
+          animation: typing 2s steps(30,end) 1s 1 normal both;
+        }
+        .tour {
+          color: #fff;
+          background-color: #3885a8;
+          margin-top: 10px;
+          padding: 6px 16px;
+          font-size: 16px;
+          position: relative;
+          min-width: 64px;
+          box-sizing: border-box;
+          font-weight: 500;
+          border-radius: 4px;
+          border: none;
+          outline: none;
+          &:after {
+            content: "";
+            background: #3885a8;
+            display: block;
+            position: absolute;
+            padding-top: 30%;
+            padding-left: 100%;
+            margin-left: -10px!important;
+            margin-top: -25%;
+            opacity: 0;
+            transition: all 0.8s
+          }
+          &:active::after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+          }
+        }
+      }
+    }
+    .section-two {
+      color: white;
+      position: relative;
+      background: linear-gradient(
+  120deg, #2980b9, #448cad);
+      min-height: 30vh;
     }
   }
 }

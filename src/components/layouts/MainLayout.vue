@@ -16,9 +16,12 @@
               </button>
           </div>
       </slot>
-      <div class="middlePane">
-          <div class="sidebar" :style="computeStyle">
+      <div class="body">
+          <div class="sidebar" :style="computeSidebarStyle">
               <slot name="sideNav"></slot>
+          </div>
+          <div class="content-section" :style="computeCenterStyle">
+              <slot name="mainContent"></slot>
           </div>
       </div>
   </div>
@@ -32,9 +35,14 @@ export default {
         };
     },
     computed: {
-        computeStyle() {
+        computeSidebarStyle() {
             return {
                 width: !this.toggle ? '56px' : '180px'
+            }
+        },
+        computeCenterStyle() {
+            return {
+                width: !this.toggle ? 'calc(100% - 56px)' : 'calc(100% - 180px)' 
             }
         }
     },
@@ -51,10 +59,11 @@ export default {
 .main-layout {
     .menu-bar {
         display: flex;
-        position: relative;
+        position: sticky;
         align-items: center;
         height: 56px;
-        background-color: #3f51b5;
+        background: linear-gradient(
+  120deg, #2980b9, #448cad);;
         border: 1px solid rgba(156,152,152,.5);
         .bar1, .bar2, .bar3 {
             width: 33px;
@@ -64,7 +73,7 @@ export default {
             transition: 0.4s;
         }
         .hamb-container {
-            background: #3f51b5;
+            background: transparent;
             border: none;
             outline: none;
             margin-left: 6px;
@@ -95,14 +104,20 @@ export default {
             right: 5px
         }
     }
-    .middlePane {
+    .body {
         background: #ffffff;
         height: calc(100vh - 56px);
+        display: flex;
         .sidebar {
             height: 100%;
             background: #ffffff;
             transition: width 180ms ease-in-out;
             border: 1px solid rgba(156,152,152,.5);
+        }
+        .content-section {
+            max-height: 100%;
+            overflow: auto;
+            transition: width 180ms ease-in-out;
         }
     }
 }
