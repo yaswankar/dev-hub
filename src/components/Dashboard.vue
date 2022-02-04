@@ -45,6 +45,7 @@
                 </div>
               </div>
             </div>
+            <svg viewBox="0 0 1430 140" class="sep-one" xmlns="http://www.w3.org/2000/svg"><path d="M1440 0v59.969c-65.287-39.594-188.865-55.343-370.736-47.248C766 26.221 627.87 140 277 140 171.698 140 79.365 124.417 0 93.25V0h1440z"></path></svg>
           </div>
       </div>
     </main-layout>
@@ -92,7 +93,7 @@ export default {
         .typed-out {
           overflow: hidden;
           white-space: nowrap;
-          animation: typing 2s steps(30,end) 1s 1 normal both;
+          animation: typing 3s steps(30,end) 1s infinite normal both;
         }
         .tour {
           color: #fff;
@@ -129,31 +130,30 @@ export default {
       }
     }
     .section-two {
-      color: white;
-      position: relative;
-      background: linear-gradient(
-  120deg, #2980b9, #448cad);
-      min-height: 30vh;
-      .capIcon {
-        position: absolute;
-        top: 50px;
-        left: 10%;
-        .capHead {
-          width:60px;
-          height:60px;
-          transform:rotate(45deg);
-          background-color:#000;
+        color: white;
+        position: relative;
+        background: #2980b9;
+        min-height: 25vh;
+        .capIcon {
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            .capHead {
+            width:60px;
+            height:60px;
+            transform:rotate(45deg);
+            background-color:#000;
+            }
+            .capBottom {
+            width: 80px;
+            height: 10px;
+            margin-top: -9px;
+            margin-left: 14px;
+            transform: rotate(-45deg);
+            background-color: #000;
+            }
         }
-        .capBottom {
-          width: 80px;
-          height: 10px;
-          margin-top: -9px;
-          margin-left: 14px;
-          transform: rotate(-45deg);
-          background-color: #000;
-        }
-      }
-      .info-row {
+        .info-row {
         display: flex;
         justify-content: space-evenly;
         position: relative;
@@ -161,18 +161,18 @@ export default {
         left: 22%;
         width: 78%;
         .info-div {
-          display: flex;
-          .icon-wrapper {
+            display: flex;
+            .icon-wrapper {
             border: 2px solid #ffffff;
             background: #015981;
             border-radius: 1em;
             max-height: 40px;
-          }
-          .icon-20 {
+            }
+            .icon-20 {
             font-size: 20px;
             padding: 10px;
-          }
-          .context {
+            }
+            .context {
             margin-left: 10px;
             text-align: left;
             .text-one {
@@ -181,9 +181,16 @@ export default {
             .text-two {
                 font-size: 15px;
             }
-          }
+            }
         }
-      }
+        }
+        .sep-one {
+            position: absolute;
+            left: 0;
+            top: 25vh;
+            background: white;
+            fill: #2980b9;
+        }
     }
-  }
+}
 </style>
