@@ -164,6 +164,7 @@ export default {
           display: flex;
           .icon-wrapper {
             border: 2px solid #ffffff;
+            background: #015981;
             border-radius: 1em;
             max-height: 40px;
           }
