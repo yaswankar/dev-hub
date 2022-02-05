@@ -47,6 +47,29 @@
             </div>
             <svg viewBox="0 0 1430 140" class="sep-one" xmlns="http://www.w3.org/2000/svg"><path d="M1440 0v59.969c-65.287-39.594-188.865-55.343-370.736-47.248C766 26.221 627.87 140 277 140 171.698 140 79.365 124.417 0 93.25V0h1440z"></path></svg>
           </div>
+          <div class="section-three">
+            <div class="sect-one">
+              <h1>1</h1>
+              <div class="content">
+                <h2>Easy to search the topic you want to learn</h2>
+                <p>Dev Hub is a collection of many resources. Learn and widen your knowledge dimensions</p>
+              </div>
+            </div>
+            <div class="sect-two">
+              <h1>2</h1>
+              <div class="content">
+                <h2>Join us to help share knowledge to the Community</h2>
+                <p>We have an enthusiastic and responsible team from many companies <br/> and corporations with many years of experience. <br/> Join us to grow together.</p>
+              </div>
+            </div>
+            <div class="sect-three">
+              <h1>3</h1>
+              <div class="content">
+                <h2>Dev Hub users easy to achieve the desired skills</h2>
+                <p>Dev Hub system is meticulously built to enhance the interest of students.<br/> It provides an authentic and easy experience to gain knowledge.</p>
+              </div>
+            </div>
+          </div>
       </div>
     </main-layout>
 </template>
@@ -134,6 +157,7 @@ export default {
         position: relative;
         background: #2980b9;
         min-height: 25vh;
+        height: auto;
         .capIcon {
             position: absolute;
             top: 50px;
@@ -187,10 +211,36 @@ export default {
         .sep-one {
             position: absolute;
             left: 0;
-            top: 25vh;
+            top: 18vh;
             background: white;
             fill: #2980b9;
         }
+    }
+    .section-three {
+      padding: 20px 40px;
+      margin-top: 36px;
+      position: relative;
+      background: #ffffff;
+      .sect-one, .sect-two, .sect-three {
+        display: flex;
+        text-align: left;
+        .content {
+          margin-left: 20px;
+          margin-bottom: 30px;
+          h3 {
+            color: #015981;
+          }
+          p {
+            font-weight: 500;
+          }
+        }
+      }
+      .sect-one, .sect-three {
+        justify-content: flex-start;
+      }
+      .sect-two {
+        justify-content: flex-end;
+      }
     }
 }
 </style>
