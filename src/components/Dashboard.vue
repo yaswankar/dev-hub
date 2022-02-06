@@ -45,7 +45,6 @@
                 </div>
               </div>
             </div>
-            <svg viewBox="0 0 1430 140" class="sep-one" xmlns="http://www.w3.org/2000/svg"><path d="M1440 0v59.969c-65.287-39.594-188.865-55.343-370.736-47.248C766 26.221 627.87 140 277 140 171.698 140 79.365 124.417 0 93.25V0h1440z"></path></svg>
           </div>
           <div class="section-three">
             <div class="sect-one">
@@ -65,8 +64,18 @@
             <div class="sect-three">
               <h1>3</h1>
               <div class="content">
-                <h2>Dev Hub users easy to achieve the desired skills</h2>
+                <h2>Dev Hub made easy for users to achieve the desired skills</h2>
                 <p>Dev Hub system is meticulously built to enhance the interest of students.<br/> It provides an authentic and easy experience to gain knowledge.</p>
+              </div>
+            </div>
+          </div>
+          <div class="section-four">
+            <div class="boxer">
+              <div class="box-plate"></div>
+              <div class="container-box">
+                <img class="vue" src="../assets/vue.png" alt="">
+                <img class="react" src="../assets/react.png" alt="">
+                <img class="js" src="../assets/js.png" alt="">
               </div>
             </div>
           </div>
@@ -217,8 +226,7 @@ export default {
         }
     }
     .section-three {
-      padding: 20px 40px;
-      margin-top: 36px;
+      padding: 56px 40px 20px 40px;
       position: relative;
       background: #ffffff;
       .sect-one, .sect-two, .sect-three {
@@ -241,6 +249,86 @@ export default {
       .sect-two {
         justify-content: flex-end;
       }
+    }
+    .section-four {
+      height: auto;
+      padding: 10px 20px;
+      position: relative;
+      background: #ffffff;
+      .boxer {
+        width: 60%;
+        margin: 0 auto;
+        .box-plate {
+          background: #3885a8;
+          position: relative;
+          transform: rotate(-10deg);
+          border: 2px solid #4d4d4d;
+          height: 50px;
+          top: 20px;
+          left: -10px;
+        }
+        .container-box {
+          margin-top: 100px;
+          border: 2px solid #4d4d4d;
+          height: 400px;
+          text-align: left;
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            background: #04ACFF;
+            width: 100%;
+            bottom: 0;
+            animation: wipe 5s cubic-bezier(.2,.6,.8,.4) infinite alternate;
+          }
+          img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+          }
+          .vue {
+            animation: vueanime 5s linear 2s infinite alternate;
+          }
+          .react {
+            animation: reactanime 5s linear 2s infinite alternate;
+          }
+          .js {
+            animation: jsanime 5s linear 2s infinite alternate;
+          }
+          @keyframes vueanime {
+            0%   {transform: rotate(-45deg); left:100px; top:0px;}
+            25%  {transform: rotate(-90deg); left:calc(100% - 50px); top:100px;}
+            50%  {transform: rotate(-135deg); left:200px; top:calc(100% - 50px);}
+            75%  {transform: rotate(-180deg); left:0px; top:200px;}
+            100% {transform: rotate(-225deg); left:100px; top:0px;}
+          }
+          @keyframes reactanime {
+            0%   {transform: rotate(-45deg); left:0px; top:200px;}
+            20%  {transform: rotate(-90deg); left:200px; top:0px;}
+            40%  {transform: rotate(-135deg); left:calc(100% - 50px); top:300px;}
+            60%  {transform: rotate(-180deg); left:calc(20%); top:calc(100% - 50px);}
+            80% {transform: rotate(-225deg); left:0px; top:200px;}
+            100% {transform: rotate(-270deg); left:calc(40%); top:0px;}
+          }
+          @keyframes jsanime {
+            0%   {transform: rotate(-45deg); left:calc(100% - 50px); top:calc(100% - 50px);}
+            20%  {transform: rotate(-90deg); left:calc(60%); top:calc(100% - 50px);}
+            40%  {transform: rotate(-135deg); left:100px; top:350px;}
+            60%  {transform: rotate(-180deg); left:calc(100% - 100px); top: 50px;}
+            80% {transform: rotate(-225deg); left:calc(100% - 50px); top:100px;}
+            100% {transform: rotate(-270deg); left:calc(50%); top:calc(50%);}
+          }
+          @keyframes wipe {
+            0% {
+              height: 0;
+            }
+            100% {
+              height: 90%;
+            }
+          }
+        }
+      }
+      
     }
 }
 </style>
